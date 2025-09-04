@@ -89,3 +89,77 @@ where_my_things_are = {
 # Print each item in the specified format
 for thing, location in where_my_things_are.items():
     print(f"My {thing} is kept in my {location}")
+
+colors = ['red', 'green', 'blue']
+# Accessing the individual items of a list is much like accessing elements in a JavaScript array. 
+# Use square brackets with an expression that evaluates to an integer to access the element at that index:
+print(colors[0])
+# prints: red
+
+# However, unlike in JavaScript, we can use negative integers to index from the end of a list:
+print(colors[-1])
+# prints: blue
+
+# We also use square brackets to target an item of a list for assignment:
+colors[-1] = 'brown'
+print(colors)
+# prints: ['red', 'green', 'brown']
+
+# Unlike with JavaScript arrays, assigning to a non-existing index results in an error:
+# colors[10] = 'yellow'
+# # error: IndexError: list assignment index out of range
+
+# The equivalent to JavaScript’s push() method is append():
+colors.append('purple')
+print(colors)
+# prints: ['red', 'green', 'brown', 'purple']
+# purple was added to the end of the list
+
+# However, unlike JavaScript’s push() method, append() can only add one item and does not return a value.
+# For adding multiple items, use the extend():
+colors.extend(['orange', 'black'])
+print(colors)
+# prints: ['red', 'green', 'brown', 'purple', 'orange', 'black']
+# orange and black were added to the end of the list
+
+# To add an item anywhere within a list, use the insert() method:
+colors.insert(1, 'yellow')
+print(colors)
+# prints: ['red', 'yellow', 'green', 'brown', 'purple', 'orange', 'black']
+# yellow was added at the 1 index; no elements were replaced
+
+# Python lists have a pop() method, but it’s more flexible in Python 
+# because you can specify the index of the item to remove and return:
+green = colors.pop(2)
+print(colors)
+# prints: ['red', 'yellow', 'brown', 'purple', 'orange', 'black']
+# green was removed at the 2 index and is in the green variable
+
+# There’s also a remove() method that removes the first item that matches what you pass in:
+colors.remove('orange')
+print(colors)
+# prints: ['red', 'yellow', 'brown', 'purple', 'black']
+
+# The clear() method empties a list:
+colors.clear()
+print(colors)
+# prints: []
+
+# The for in loop is used to iterate over the items in a list:
+colors = ['red', 'green', 'blue']
+for color in colors:
+    print(color)
+    # prints:
+    # red
+    # green
+    # blue
+
+# If we need to access the index of the item while iterating over a list, we use the built-in 
+# enumerate() function to provide the index and the value to a for loop:
+for idx, color in enumerate(colors):
+    print(idx, color)
+    # prints:
+    # 0 red
+    # 1 green
+    # 2 blue
+
