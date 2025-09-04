@@ -213,3 +213,25 @@ print(r, g, b)
 for key, val in student.items():
     print( f"{key} is {val}" )
 
+# Create a set from scratch using curly braces:
+integer_set = {1, 2, 3, 4, 5}
+
+# Or, more commonly, create a set from an iterable data type, like a list or tuple.
+another_int_set = set([5, 6, 7, 8, 9])
+chips = ['potato', 'computer', 'fish and']
+chips_set = set(chips)
+
+# In Python, you can add elements to a set using the add() method.
+# Adding elements to a set
+chips_set.add('paint')
+print(chips_set)
+# prints: {'paint', 'fish and', 'potato', 'computer'}
+# remember, sets are not ordered - your elements may print in a different order
+
+# To remove elements from a set in Python, you can use the remove() method.
+# Removing elements from a set
+chips_set.remove('fish and')
+print(chips_set)
+# prints: {'potato', 'paint', 'computer'}
+# remember, sets are not ordered - your elements may print in a different order
+
