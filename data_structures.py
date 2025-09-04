@@ -163,3 +163,53 @@ for idx, color in enumerate(colors):
     # 1 green
     # 2 blue
 
+# If you need to create a 1-tuple (a tuple with one item), note that a comma is necessary:
+hello_tuple = ('Hello')
+# this will not create a tuple
+print(type(hello_tuple))
+# prints: <class 'str'>
+
+hello_tuple = ('Hello',)
+# or just the following (remember parenthesis are not required)
+hello_tuple = 'Hello',
+print(type(hello_tuple))
+# prints: <class 'tuple'>
+
+# Although tuples can’t be modified like lists, 
+# we can retrieve their items in the same way using square brackets:
+colors = ('red', 'green', 'blue')
+print(colors[1])
+# prints: green
+
+# Sequences (lists, tuples, and strings) also have an index() 
+# method that returns the index of the first match:
+
+colors = ('red', 'green', 'blue')
+blue_idx = colors.index('blue')
+print(blue_idx)
+# prints: 2
+
+# The items in tuples are iterated over by using for loops, as we saw previously with lists:
+for idx, color in enumerate(colors):
+    print(idx, color)
+    # prints:
+    # 0 red
+    # 1 green
+    # 2 blue
+    
+# Tuples (and other sequences) have a convenient feature called unpacking. 
+# This performs multiple variable assignments in a single line of code:
+colors = ('red', 'green', 'blue')
+r, g, b = colors
+print(r, g, b)
+# prints: red green blue
+
+# It requires comma-separated variables on the left side of the assignment operator 
+# and a sequence of values on the right. Functions and methods often return tuples in 
+# Python, which is often the preferred method of accessing them.
+# You’ve already seen this in action within the for in loops while 
+# working with dictionaries. Recall this example:
+
+for key, val in student.items():
+    print( f"{key} is {val}" )
+
